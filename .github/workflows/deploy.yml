@@ -17,8 +17,8 @@ jobs:
       with:
         HOST: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
         PASSWORD: ${{ secrets.PASSWORD }}
+        PORT: ${{ secrets.PORT }}
         script_stop: true
         script: |
           whoami
