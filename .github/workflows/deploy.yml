@@ -23,5 +23,5 @@ jobs:
         script: |
           whoami
           pwd
-          ls -al
+          ls -la
           touch /tmp/hello_.txt
