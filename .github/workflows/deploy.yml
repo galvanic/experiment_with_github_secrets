@@ -12,18 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Copy file via scp
-      uses: appleboy/scp-action@master
-      env:
-        HOST: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
-        script_stop: true
-      with:
-        source: '.'
-        target: '/tmp/test_github_actions'
-
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
@@ -35,5 +23,16 @@ jobs:
         script: |
           whoami
           touch /tmp/hello_justine.txt
-          python3 /tmp/test_github_actions/run.py
+
+    - name: Copy file via scp
+      uses: appleboy/scp-action@master
+      env:
+        HOST: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+        script_stop: true
+      with:
+        source: '.'
+        target: '/tmp/test_github_actions'
 
