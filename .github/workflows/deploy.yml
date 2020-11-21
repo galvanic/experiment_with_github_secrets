@@ -23,7 +23,7 @@ jobs:
         script: |
           whoami
           pwd
-          ls -la
+          ls -al
           touch /tmp/hello_.txt
 
     - name: Copy file via scp
