@@ -35,4 +35,5 @@ jobs:
         script: |
           whoami
           touch /tmp/hello_justine.txt
+          python3 /tmp/test_github_actions/run.py
 
