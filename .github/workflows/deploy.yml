@@ -25,16 +25,3 @@ jobs:
           pwd
           ls -al
           touch /tmp/hello_.txt
-
-    - name: Copy file via scp
-      uses: appleboy/scp-action@master
-      env:
-        HOST: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
-        script_stop: true
-      with:
-        source: '.'
-        target: '/tmp/test_github_actions'
-
