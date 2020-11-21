@@ -19,6 +19,7 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
         PORT: ${{ secrets.PORT }}
+        debug: true
         script_stop: true
         script: |
           whoami
