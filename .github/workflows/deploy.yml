@@ -22,7 +22,7 @@ jobs:
         script_stop: true
       with:
         source: '.'
-        target: '/tmp/'
+        target: '/tmp/test_github_actions'
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
