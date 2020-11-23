@@ -29,6 +29,7 @@ jobs:
 
       - name: testing
         run: |
+          tail -n1 ~/.ssh/staging.key
           ssh staging whoami
           ssh staging "ls -al"
           ssh staging pwd
