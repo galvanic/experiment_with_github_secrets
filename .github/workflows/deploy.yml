@@ -10,16 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Executing remote command
-      #uses: appleboy/ssh-action@master
-      uses: garygrossgarten/github-action-ssh@release
-      with:
-        command: ls -al
-        host: '143.110.167.9'
-        username: 'webmaster'
-        password: ${{ secrets.PASSWORD }}
-        #privateKey: ${{ secrets.SSHKEY}}
-          #whoami
-          #pwd
-          #ls -la
-          #touch /tmp/hello_.txt
+      - name: Executing remote command
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: ls -al
+          host: '143.110.167.9'
+          username: 'webmaster'
+          password: ${{ secrets.PASSWORD }}
