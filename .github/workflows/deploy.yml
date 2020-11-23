@@ -29,9 +29,9 @@ jobs:
 
       - name: testing
         run: |
-          ls -al
-          whoami
-          pwd
-          touch ~/hello.txt
-          touch /tmp/hello.txt
+          ssh staging whoami
+          ssh staging "ls -al"
+          ssh staging pwd
+          ssh staging "touch ~/hello.txt"
+          ssh staging "touch /tmp/hello.txt"
 
