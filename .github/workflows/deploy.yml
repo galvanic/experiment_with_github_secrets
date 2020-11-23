@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-
     - name: Executing remote command
       #uses: appleboy/ssh-action@master
       uses: garygrossgarten/github-action-ssh@release
@@ -19,7 +17,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-          #privateKey: ${{ secrets.SSHKEY}}
+        #privateKey: ${{ secrets.SSHKEY}}
         command: ls -al
           #whoami
           #pwd
