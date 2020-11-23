@@ -32,6 +32,7 @@ jobs:
           ssh staging whoami
           ssh staging "ls -al"
           ssh staging pwd
-          ssh staging "touch ~/hello.txt"
+          ssh staging "touch ./hello1.txt"
+          ssh staging "touch ~/hello2.txt"
           ssh staging "touch /tmp/hello.txt"
 
