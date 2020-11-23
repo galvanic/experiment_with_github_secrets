@@ -28,5 +28,10 @@ jobs:
           SSH_KEY: ${{ secrets.SSHKEY }}
 
       - name: testing
-        run: ls -al
+        run: |
+          ls -al
+          whoami
+          pwd
+          touch ~/hello.txt
+          touch /tmp/hello.txt
 
