@@ -17,7 +17,8 @@ jobs:
       with:
         HOST: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
-        KEY: ${{ secrets.SSHKEY }}
+          #KEY: ${{ secrets.SSHKEY }}
+        PASSWORD: ${{ secrets.PASSWORD }}
         PORT: ${{ secrets.PORT }}
         debug: true
         script_stop: true
