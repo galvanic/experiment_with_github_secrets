@@ -14,11 +14,11 @@ jobs:
       #uses: appleboy/ssh-action@master
       uses: garygrossgarten/github-action-ssh@release
       with:
+        command: ls -al
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         #privateKey: ${{ secrets.SSHKEY}}
-        command: ls -al
           #whoami
           #pwd
           #ls -la
