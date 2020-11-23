@@ -18,8 +18,8 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-          #passphrase: ${{ secrets.PASSPHRASE }}
-        privateKey: ${{ secrets.SSHKEY}}
+        password: ${{ secrets.PASSWORD }}
+          #privateKey: ${{ secrets.SSHKEY}}
         command: ls -al
           #whoami
           #pwd
