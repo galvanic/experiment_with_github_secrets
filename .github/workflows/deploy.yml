@@ -20,13 +20,18 @@ jobs:
           TWITTER_SECRET: ${{ github.TWITTER_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ github.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_SECRET: ${{ github.TWITTER_ACCESS_SECRET }}
-          HOST: ${{ github.HOST }}
         with:
           host: '143.110.167.9'
           username: 'webmaster'
           key: ${{ secrets.SSHKEY}}
-          envs: RAINDROP_CLIENT_ID,RAINDROP_CLIENT_SECRET,RAINDROP_TOKEN,TWITTER_KEY,TWITTER_SECRET,TWITTER_ACCESS_TOKEN,TWITTER_ACCESS_SECRET,HOST
+          envs: RAINDROP_CLIENT_ID,RAINDROP_CLIENT_SECRET,RAINDROP_TOKEN,TWITTER_KEY,TWITTER_SECRET,TWITTER_ACCESS_TOKEN,TWITTER_ACCESS_SECRET
           script: |
-            echo "host: $HOST"
+            export RAINDROP_CLIENT_ID=$RAINDROP_CLIENT_ID
+            export RAINDROP_CLIENT_SECRET=$RAINDROP_CLIENT_SECRET
+            export RAINDROP_TOKEN=$RAINDROP_TOKEN
+            export TWITTER_KEY=$TWITTER_KEY
+            export TWITTER_SECRET=$TWITTER_SECRET
+            export TWITTER_ACCESS_TOKEN=$TWITTER_ACCESS_TOKEN
+            export TWITTER_ACCESS_SECRET=$TWITTER_ACCESS_SECRET
             cd lcpt_twitter_bot/ && python3 run.py
             ls
