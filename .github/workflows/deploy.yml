@@ -13,8 +13,17 @@ jobs:
       - name: ls -a via ssh
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: ls -a
           host: '143.110.167.9'
           username: 'webmaster'
           privateKey: ${{ secrets.SSHKEY}}
+          command: |
+            whoami
+            pwd
+            echo "$RAINDROP_TOKEN"
+            echo "$RAINDROP_TOKEN" > ~/hello2.txt
+            echo $RAINDROP_TOKEN
+            echo $RAINDROP_TOKEN > ~/hello1.txt
+
+
+
 
