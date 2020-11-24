@@ -20,11 +20,13 @@ jobs:
           TWITTER_SECRET: ${{ secrets.TWITTER_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+          TEST_VAR: "i am a test"
         with:
           host: '143.110.167.9'
           username: 'webmaster'
           key: ${{ secrets.SSHKEY}}
-          envs: RAINDROP_CLIENT_ID,RAINDROP_CLIENT_SECRET,RAINDROP_TOKEN,TWITTER_KEY,TWITTER_SECRET,TWITTER_ACCESS_TOKEN,TWITTER_ACCESS_SECRET
+          envs: RAINDROP_CLIENT_ID,RAINDROP_CLIENT_SECRET,RAINDROP_TOKEN,TWITTER_KEY,TWITTER_SECRET,TWITTER_ACCESS_TOKEN,TWITTER_ACCESS_SECRET,TEST_VAR
           script: |
+            echo "$TEST_VAR"
             cd lcpt_twitter_bot/ && python3 run.py
             ls
