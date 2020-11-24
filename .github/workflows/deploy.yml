@@ -16,13 +16,8 @@ jobs:
           host: '143.110.167.9'
           username: 'webmaster'
           privateKey: ${{ secrets.SSHKEY}}
-          command: |
-            whoami
-            pwd
-            echo "$RAINDROP_TOKEN"
-            echo "$RAINDROP_TOKEN" > ~/hello2.txt
-            echo $RAINDROP_TOKEN
-            echo $RAINDROP_TOKEN > ~/hello1.txt
+          command:
+            cd lcpt_twitter_bot/ && python3 run.py
 
 
 
