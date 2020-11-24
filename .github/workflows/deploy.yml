@@ -33,5 +33,6 @@ jobs:
             export TWITTER_SECRET=$TWITTER_SECRET
             export TWITTER_ACCESS_TOKEN=$TWITTER_ACCESS_TOKEN
             export TWITTER_ACCESS_SECRET=$TWITTER_ACCESS_SECRET
+            echo "twitter: $TWITTER_KEY" > ~/hello.txt
             cd lcpt_twitter_bot/ && python3 run.py
             ls
